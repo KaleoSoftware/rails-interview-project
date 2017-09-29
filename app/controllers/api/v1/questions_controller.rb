@@ -1,5 +1,5 @@
 class API::V1::QuestionsController < ApplicationController
-  before_filter :authorize, :increment_api_counter
+  before_filter :authorize
 
   def index
     @questions = Question.public_questions
@@ -13,9 +13,17 @@ class API::V1::QuestionsController < ApplicationController
 
   def authorize
     @tenant = Tenant.where(api_key: params[:api_key]).first
-    unless @tenant
+    unless @tenant || use_basic_auth
       render json: {}, status: 401
       return false
+    end
+    increment_api_counter
+  end
+
+  def use_basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+      @tenant = Tenant.find_by_api_key(password)
+      @tenant.api_key == password
     end
   end
 
