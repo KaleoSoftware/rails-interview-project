@@ -6,8 +6,8 @@ QuestionsController is routed to //api/v1/questions
 
 ## API Key
 
-The Api Key can be either a basic auth (e.g. api:<key>@localhost:3000/api/v1/questions)
-or a query string (e.g. localhost:3000/api/v1/questions?api_key=<key>)
+The Api Key can be either a basic auth (e.g. api:< key >@localhost:3000/api/v1/questions)
+or a query string (e.g. localhost:3000/api/v1/questions?api_key=< key>)
 a key which doesn't exist in the tenants table will return a 401 "Access Denied"
 ## API counter
 The assignment didn't specify whether or how to display the counter, so for now,
