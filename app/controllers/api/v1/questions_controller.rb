@@ -10,7 +10,6 @@ class API::V1::QuestionsController < ApplicationController
   end
 
  private
-
   def authorize
     unless api_key_from_query_params || api_key_from_basic_auth
       render json: {}, status: 401
@@ -38,4 +37,3 @@ class API::V1::QuestionsController < ApplicationController
   end
 
 end
-

@@ -1,4 +1,33 @@
-    # Batteries 911 Rails Engineer Candidate Interview Project
+
+# Developer Notes
+## Routes
+QuestionsController is routed to //api/v1/questions
+#show (obviously) routes to //api/v1/question/<id>
+
+## API Key
+
+The Api Key can be either a basic auth (e.g. api:<key>@localhost:3000/api/v1/questions)
+or a query string (e.g. localhost:3000/api/v1/questions?api_key=<key>)
+a key which doesn't exist in the tenants table will return a 401 "Access Denied"
+## API counter
+The assignment didn't specify whether or how to display the counter, so for now,
+the examiner should use rails console:
+
+```ruby
+Tenant.first.api_count
+```
+
+(assuming that was the api key used in testing)
+
+## Test Coverage
+I used FactoryGirl mostly out of habit, but if the scope was really as limited as this example, I wouldn't bother.
+The only tests I wrote were in spec/controllers/questions_controller_spec, as that was the only controller/route that I wrote substantive code for.
+
+## Database
+Please don't forget to run >`rake db:setup`
+
+----
+# Batteries 911 Rails Engineer Candidate Interview Project
 
 (This is a fork of the [Kaleo Rails Engineer Candidate Interview Project](https://github.com/batteries911/rails-interview-project).)
 
