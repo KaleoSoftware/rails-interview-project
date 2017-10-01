@@ -12,6 +12,7 @@ class API::V1::QuestionsController < ApplicationController
  private
   def authorize
     unless api_key_from_query_params || api_key_from_basic_auth
+      sleep(rand(0.0009..0.0001))
       render json: {}, status: 401
       return false
     end
