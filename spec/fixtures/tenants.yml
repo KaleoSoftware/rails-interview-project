@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  api_key: 123adfsdf12312ba
+  api_count: 1
+
+two:
+  name: MyString
+  api_key: 123adfsdf12312b1
+  api_count: 0
