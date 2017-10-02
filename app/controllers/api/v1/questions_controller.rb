@@ -44,7 +44,7 @@ class API::V1::QuestionsController < ApplicationController
   end
 
   def secure_compare(their_token)
-    tokens = Tenant.all.select(:api_key).map{|record| record.api_key}
+    tokens = Tenant.all.pluck(:api_key)
     tokens.shuffle.map{|our_token|
       ActiveSupport::SecurityUtils.secure_compare(our_token, their_token) if their_token
      }.include?(true)
