@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Tenants are authorized users
 class Tenant < ActiveRecord::Base
   before_create :generate_api_key
 
