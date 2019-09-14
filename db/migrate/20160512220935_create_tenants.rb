@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateTenants < ActiveRecord::Migration
   def change
     create_table :tenants do |t|

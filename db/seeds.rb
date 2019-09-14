@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -21,9 +23,9 @@ end
 
 # Questions and Answers
 20.times do
-  question = Question.create(title: FFaker::HipsterIpsum.sentence.gsub(/\.$/, "?"),
-    private: FFaker::Boolean.random, user: users.sample)
-  (1 + rand(3)).times do
+  question = Question.create(title: FFaker::HipsterIpsum.sentence.gsub(/\.$/, '?'),
+                             private: FFaker::Boolean.random, user: users.sample)
+  rand(1..3).times do
     question.answers.create(body: FFaker::HipsterIpsum.sentence, user: users.sample)
   end
 end
