@@ -3,10 +3,13 @@
 # Questions controller
 class QuestionsController < ApplicationController
   def index
-    # @questions = Question.all
-    # @answers = Answer.all
-    # @users = User.all
-    # @tenants = Tenant.all
+    # @public_questions = Question.where(private_question: false).count
+    # @private_questions = Question.where(private_question: true).count
+    @public_questions = Question.public_question.count
+    @private_questions = Question.private_question.count
+    @answers = Answer.count
+    @users = User.count
+    @tenants = Tenant.all # TODO: tenant count goes here
   end
 
   def show

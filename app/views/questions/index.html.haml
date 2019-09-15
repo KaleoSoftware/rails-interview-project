@@ -1,16 +1,18 @@
-%h1 Hall of Questions
+%h1.text-muted.text-center Statistics Dashboard (you are great, Kris)
 %table.table
   %thead
     %tr
-      %th{:scope => "col"} Category
+      %th{:scope => "col"} Category:
       %th{:scope => "col"} Users
-      %th{:scope => "col"} Questions
+      %th{:scope => "col"} Public Questions
+      %th{:scope => "col"} Private Questions
       %th{:scope => "col"} Answers
       %th{:scope => "col"} Tenant Requests
   %tbody
     %tr
-      %th{:scope => "row"} Count
-      %td # of Users here
-      %td # of Questions here
-      %td # of Answers here
+      %th{:scope => "row"} Count:
+      %td= @users
+      %td= @public_questions
+      %td= @private_questions
+      %td= @answers
       %td # of Tenant Requests here
