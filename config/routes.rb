@@ -3,8 +3,8 @@
 Rails.application.routes.draw do
   root 'questions#index'
 
-  get 'questions', to: 'questions#index'
+  # TEMPORARY
+  get 'questions/tenants', to: 'questions#tenants'
 
-  # resources :questions, only: %i[index show], defaults: { format: :json }
   resources :questions, only: %i[index show]
 end
