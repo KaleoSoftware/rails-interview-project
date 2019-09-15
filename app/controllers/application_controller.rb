@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from(ApiKeyAuthorizationError) do
-    render status: :forbidden, json: { error: 'Provided api key is not authorized' }
+    render status: :unauthorized, json: { status: 401, error: 'Provided api key is not authorized' }
   end
 
   rescue_from(ActionController::ParameterMissing) do |e|
-    render status: :bad_request, json: { error: "Required parameter missing: #{e.param}" }
+    render status: :bad_request, json: {  status: 400, error: "Required parameter missing: #{e.param}" }
   end
 end
