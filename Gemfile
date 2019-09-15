@@ -26,6 +26,12 @@ gem 'sdoc', '~> 1.0', group: :doc
 # rubocop for linting
 gem 'rubocop', '~> 0.74', require: false
 
+# For more efficient/easier html development
+gem 'haml', '~> 5.1'
+
+# For html styling
+gem 'bootstrap', '~> 4.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -48,7 +54,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 4.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
