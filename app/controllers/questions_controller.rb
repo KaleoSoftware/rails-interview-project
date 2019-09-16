@@ -46,7 +46,8 @@ class QuestionsController < ApplicationController
         { id: answer.id, answer: answer.body, answerer_id: answerer.id, answerer_name: answerer.name }
       end
       asker = User.where(id: question.asker).first
-      { id: question.id, question: question.title, asker_id: asker.id, asker_name: asker.name, answers: associated_answers }
+      { id: question.id, question: question.title, asker_id: asker.id,
+        asker_name: asker.name, answers: associated_answers }
     end
     questions_with_answers
   end
