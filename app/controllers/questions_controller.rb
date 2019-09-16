@@ -38,9 +38,11 @@ class QuestionsController < ApplicationController
     questions_with_answers = questions.map do |question|
       answers = Answer.where(question_id: question.id)
       associated_answers = answers.map do |answer|
-        { id: answer.id, answer: answer.body }
+        answerer = User.where(id: answer.answerer).first
+        { id: answer.id, answer: answer.body, answerer_id: answerer.id, answerer_name: answerer.name }
       end
-      { id: question.id, question: question.title, answers: associated_answers }
+      asker = User.where(id: question.asker).first
+      { id: question.id, question: question.title, asker_id: asker.id, asker_name: asker.name, answers: associated_answers }
     end
     questions_with_answers
   end

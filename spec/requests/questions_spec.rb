@@ -70,12 +70,12 @@ RSpec.describe 'Questions API', type: :request do
       expect(json.first[0]).to eq('questions')
     end
 
-    it 'expects questions to have ids and questions' do
-      expect(json['questions'][0]).to include('id', 'question')
+    it 'expects questions to have an id, asker details, and questions' do
+      expect(json['questions'][0]).to include('id', 'question', 'asker_id', 'asker_name')
     end
 
-    it 'includes an answer with ids and answers' do
-      expect(json['questions'][0]['answers'][0]).to include('id', 'answer')
+    it 'includes an answer with id, answer, and answerer details' do
+      expect(json['questions'][0]['answers'][0]).to include('id', 'answer', 'answerer_id', 'answerer_name')
     end
 
     it 'does return public questions' do
