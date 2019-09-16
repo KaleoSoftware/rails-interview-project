@@ -1,3 +1,35 @@
+## Questions and Answers API
+
+Endpoints:
+
+root: provides a dashboard with various statistics about questions, answers, users, and tenants
+
+/questions?api_key=<api_key> : Use to view all public questions and their respective answers
+
+
+## Project Setup
+
+Clone this repo locally, and from the top-level directory run:
+
+`bundle install`
+
+`rails db:migrate`
+`rails db:setup`
+
+To make sure it's all working,
+
+`rails s`
+
+Navigate to http://localhost:3000/ to see the dashboard
+Navigate to http://localhost:3000/questions?api_key=<api_key> (or do a GET request with tool of your choice) to recieve the questions json
+
+To run the tests, run
+`rspec`
+
+Note: this project uses ruby 2.6.4 so you may need to update to the most recent version to run
+
+# Original Instructions beyond this point
+
 # Kaleo Rails Engineer Candidate Interview Project
 
 Thanks for taking the time to complete this exercise. We're excited that you're considering joining our amazing team.
