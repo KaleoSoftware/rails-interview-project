@@ -6,6 +6,8 @@ root: provides a dashboard with various statistics about questions, answers, use
 
 /questions?api_key=<api_key> : Use to view all public questions and their respective answers
 
+/questions?api_key=<api_key>&search=<search_string> : Use to view all public questions whose title's contain the given string
+
 
 ## Project Setup
 
@@ -16,17 +18,20 @@ Clone this repo locally, and from the top-level directory run:
 `rails db:migrate`
 `rails db:setup`
 
-To make sure it's all working,
+To make run the server locally,
 
 `rails s`
 
 Navigate to http://localhost:3000/ to see the dashboard
+
 Navigate to http://localhost:3000/questions?api_key=<api_key> (or do a GET request with tool of your choice) to recieve the questions json
+
+Navigate to http://localhost:3000/questions?api_key=<api_key>&search=<search_string> (or do a GET request with tool of your choice) to recieve the questions json filtered by search string
 
 To run the tests, run
 `rspec`
 
-Note: this project uses ruby 2.6.4 so you may need to update to the most recent version to run
+Note: This project uses ruby 2.6.4 so you may need to update to the most recent version to run. Tools like rvm can help you manage different ruby versions.
 
 # Original Instructions beyond this point
 
