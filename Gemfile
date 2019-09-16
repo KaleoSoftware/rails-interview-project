@@ -32,6 +32,8 @@ gem 'haml', '~> 5.1'
 # For html styling
 gem 'bootstrap', '~> 4.3'
 
+gem 'pry'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -48,6 +50,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 5.0'
   gem 'shoulda-matchers', '~> 4.1'
 end
