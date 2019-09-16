@@ -6,7 +6,7 @@ root: provides a dashboard with various statistics about questions, answers, use
 
 /questions?api_key=<api_key> : Use to view all public questions and their respective answers
 
-/questions?api_key=<api_key>&search=<search_string> : Use to view all public questions whose title's contain the given string
+/questions?api_key=<api_key>&search=<search_string> : Use to view all public questions whose title's contain the given string. This is caps sensitive!
 
 
 ## Project Setup
