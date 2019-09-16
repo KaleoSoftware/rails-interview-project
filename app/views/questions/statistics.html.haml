@@ -1,28 +1,26 @@
-%h1.text-muted.text-center Statistics Dashboard
+%h1.text-muted.text-center= t('statistics_dashboard')
 %table.table.text-center
   %thead
     %tr
-      %th{:scope => "col"} Category:
-      %th{:scope => "col"} Users
-      %th{:scope => "col"} Public Questions
-      %th{:scope => "col"} Private Questions
-      %th{:scope => "col"} Answers
-      %th{:scope => "col"} Tenants
+      %th{:scope => "col"}= t('users')
+      %th{:scope => "col"}= t('public_questions') 
+      %th{:scope => "col"}= t('private_questions') 
+      %th{:scope => "col"}= t('answers') 
+      %th{:scope => "col"}= t('tenants') 
   %tbody
     %tr
-      %th{:scope => "row"} Count:
       %td= @users
       %td= @public_questions
       %td= @private_questions
       %td= @answers
       %td= @tenants_count
-%h1.text-muted.text-center Tenant Requests
+%h1.text-muted.text-center= t('tenant_requests') 
 %table.table.text-center
   %thead
     %tr
-      %th{:scope => "col"} Tenant Name
-      %th{:scope => "col"} Tenant ID
-      %th{:scope => "col"} Number of Requests
+      %th{:scope => "col"}= t('tenant_name') 
+      %th{:scope => "col"}= t('tenant_id') 
+      %th{:scope => "col"}= t('number_of_requests') 
   %tbody
     - @tenants.each do |tenant|
       %tr

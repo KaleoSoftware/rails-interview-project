@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+  unauthorized: "Provided api key is not authorized"
+  parameter_missing: "Required parameter missing"
+  statistics_dashboard: "Statistics Dashboard"
+  users: "Users"
+  public_questions: "Public Questions"
+  private_questions: "Private Questions"
+  answers: "Answers"
+  tenants: "Tenants"
+  tenant_requests: "Tenant Requests"
+  tenant_name: "Tenant Name"
+  tenant_id: "Tenant ID"
+  number_of_requests: "Number of Requests"
