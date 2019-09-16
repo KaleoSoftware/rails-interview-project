@@ -33,3 +33,4 @@ en:
   tenant_name: "Tenant Name"
   tenant_id: "Tenant ID"
   number_of_requests: "Number of Requests"
+  not_found: "Requested data not found"

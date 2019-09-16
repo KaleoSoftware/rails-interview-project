@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  class NotFoundError < StandardError
+  end
+
+  rescue_from(NotFoundError) do
+    render status: :not_found, json: { status: 404, error: I18n.t('not_found') }
+  end
+
   class ApiKeyAuthorizationError < StandardError
   end
 
